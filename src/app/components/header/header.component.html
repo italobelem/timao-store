@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">Timão Store</a>
+        <div class="d-flex gap-3">
+            <a routerLink="/products" class="btn btn-outline-light">Produtos</a>
+            <a routerLink="/cart" class="btn btn-primary position-relative">
+            <i class="bi bi-cart"></i> Carrinho
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ cartService.totalItems() }}
+            </span>
+            </a>
+        </div>
+    </div>
+</nav>
