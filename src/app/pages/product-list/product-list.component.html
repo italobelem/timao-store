@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="d-flex justify-content-between mb-3 mt-4">
+        <h2>Catálogo</h2>
+        <button class="btn btn-primary" (click)="navigateToAdd()">Novo Produto</button>
+    </div>
+
+    <app-product-table [products]="products" 
+        (edit)="handleEdit($event)" 
+        (delete)="handleDelete($event)" 
+        (addToCart)="handleAddToCart($event)">
+    </app-product-table>
+</div>
