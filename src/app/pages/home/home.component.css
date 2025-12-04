@@ -1,0 +1,11 @@
+.hero-section {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      min-height: 80vh; 
+      border-bottom: 2px solid #fff;
+}
+    
+.col-md-4:hover .border {
+    background-color: #1a1a1a;
+    transition: 0.3s;
+    border-color: #fff !important;
+}
