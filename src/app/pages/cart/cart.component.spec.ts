@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CartComponent } from './cart.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { ProductService } from '../../services/product.service';
 
 describe('CartComponent', () => {
   let component: CartComponent;
@@ -8,7 +12,14 @@ describe('CartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartComponent]
+      imports: [CartComponent],
+      providers: [
+        provideHttpClient(),        
+        provideHttpClientTesting(), 
+        provideRouter([]),          
+        CartService,
+        ProductService
+      ]
     })
     .compileComponents();
 
@@ -17,7 +28,7 @@ describe('CartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 });
