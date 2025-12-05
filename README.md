@@ -1,104 +1,103 @@
-🛍️ Timão Store - E-Commerce 
+# 🛍️ Timão Store - E-Commerce
 
-Uma aplicação Front-end de E-commerce, desenvolvida em Angular 18. O sistema consome uma API REST Java (https://github.com/italobelem/TimaoStoreBackEnd) para gestão de catálogo e implementa um carrinho de compras completo com persistência local.
+> Uma aplicação Front-end de E-commerce desenvolvida em **Angular 18**.
 
-🚀 Funcionalidades
+O sistema consome uma **API REST Java** para gestão de catálogo e implementa um carrinho de compras completo com persistência local e gerenciamento de estado reativo.
 
-📦 Catálogo de Produtos (Integração com API)
+🔗 **Backend do Projeto:** [Acesse a API Java aqui](https://github.com/italobelem/TimaoStoreBackEnd)
 
-Listagem Dinâmica: Consumo de dados reais do backend Java.
+-----
 
-Gestão de Produtos (CRUD):
+## 🚀 Funcionalidades
 
-Criar/Editar: Formulários inteligentes com Reactive Forms e validações.
+### 📦 Catálogo de Produtos (Integração com API)
 
-Excluir: Remoção com confirmação visual.
+  * **Listagem Dinâmica:** Consumo de dados reais do backend Java.
+  * **Gestão de Produtos (CRUD):**
+      * **Criar/Editar:** Formulários inteligentes com *Reactive Forms* e validações robustas.
+      * **Excluir:** Remoção segura com confirmação visual.
+  * **Feedback ao Usuário:** Alertas (Toasts/Modais) e redirecionamentos automáticos após ações de sucesso ou erro.
 
-Feedback ao Usuário: Alertas e redirecionamentos automáticos após ações.
+### 🛒 Carrinho de Compras (Gerenciamento de Estado)
 
-🛒 Carrinho de Compras (Gerenciamento de Estado)
+  * Utiliza **Angular Signals** (`signal`, `computed`) para reatividade instantânea 
+  * **Persistência:** O estado do carrinho é salvo automaticamente no `LocalStorage` via `effect()`, mantendo os dados mesmo se a página for recarregada.
+  * **Recursos:**
+      * Adicionar itens diretamente do catálogo.
+      * Ajuste fino de quantidade (Botões `+` e `-`).
+      * Remoção de itens individuais.
+      * **Limpar Carrinho:** Ação global para esvaziar a lista.
+      * **Cálculos em Tempo Real:** Subtotais e Total Geral atualizados a cada interação.
 
-Tecnologia: Utiliza Angular Signals (signal, computed) para reatividade instantânea sem RxJS Subject.
+### 💳 Simulação de Checkout
 
-Persistência: O estado do carrinho é salvo automaticamente no LocalStorage via effect().
+  * Fluxo completo de finalização de compra.
+  * Tela de "Sucesso" com feedback visual animado para melhor experiência do usuário (UX).
 
-Recursos:
+-----
 
-Adicionar itens a partir do catálogo.
+## 🛠️ Stack Tecnológico
 
-Ajuste fino de quantidade (Botões + e -).
+  * **Framework:** [Angular 18](https://angular.dev/) 
+  * **Estilização:** [Bootstrap 5](https://getbootstrap.com/) + CSS Customizado
+  * **Formulários:** Reactive Forms
+  * **Ícones:** Bootstrap Icons
+  * **Gerenciamento de Estado:** Angular Signals
 
-Remoção de itens individuais.
+-----
 
-Limpar Carrinho: Ação global para esvaziar a lista.
+## ▶️ Como Executar
 
-Cálculos em Tempo Real: Subtotais e Total Geral atualizados a cada clique.
+### Pré-requisitos
 
-💳 Simulação de Checkout
+Para rodar este projeto, você precisará ter instalado:
 
-Fluxo de finalização de compra.
+  * [Node.js](https://nodejs.org/) (v18+)
+  * [Angular CLI](https://angular.io/cli) (`npm install -g @angular/cli`)
+  * **Backend Java:** Deve estar rodando localmente na porta `8080`.
 
-Tela de "Sucesso" com feedback visual animado.
+### Instalação e Execução
 
-🛠️ Stack Tecnológico
+1.  **Clone o repositório**
 
-Framework: Angular 18 (Latest)
+    ```bash
+    git clone https://github.com/italobelem/timao-store.git
+    cd timao-store
+    ```
 
-Estilização: Bootstrap 5 + CSS Customizado
+2.  **Instale as dependências**
 
-Formulários: Reactive Forms
+    ```bash
+    npm install
+    ```
 
-Ícones: Bootstrap Icons
+3.  **Inicie o servidor de desenvolvimento**
 
-▶️ Como Executar
+    ```bash
+    ng serve
+    ```
 
-Pré-requisitos
+4.  **Acesse a aplicação**
+    Abra o seu navegador e vá para: `http://localhost:4200`
 
-Node.js (v18+)
+-----
 
-Angular CLI (npm install -g @angular/cli)
+## 🧪 Roteiro de Testes
 
-Backend Java rodando na porta 8080.
+Para validar as funcionalidades da aplicação, siga o roteiro abaixo:
 
-Instalação e Execução
+### 👤 Fluxo de Compras (Cliente)
 
-Clone o repositório:
+1.  Na **Home**, clique em "Ver Catálogo".
+2.  Adicione produtos ao carrinho clicando no **botão branco**.
+3.  Vá para o **Carrinho** (ícone no menu) e ajuste as quantidades (+ ou -).
+4.  Clique em **"Finalizar Compra"** e observe a tela de confirmação de sucesso.
 
-git clone [https://github.com/SEU-USUARIO/miniecommerce.git](https://github.com/italobelem/timao-store.git)
-cd timao-store
+### ⚙️ Fluxo Administrativo (Gestão)
 
+1.  No **Catálogo**, clique no botão **"Novo Produto"**.
+2.  Preencha o formulário (Dica: tente colocar *preço 0* para testar a validação de erro).
+3.  Salve e verifique se o produto apareceu na lista.
+4.  Tente **Editar** ou **Excluir** o produto que você acabou de criar.
 
-Instale as dependências:
-
-npm install
-
-
-Inicie o servidor de desenvolvimento:
-
-ng serve
-
-
-Acesse:
-Abra http://localhost:4200 no seu navegador.
-
-🧪 Roteiro de Testes
-
-Fluxo de Compras (Cliente)
-
-Na Home, clique em "Ver Catálogo".
-
-Adicione produtos ao carrinho clicando no botão verde.
-
-Vá para o Carrinho e ajuste as quantidades.
-
-Clique em "Finalizar Compra" para ver a tela de confirmação.
-
-Fluxo Administrativo (Gestão)
-
-No Catálogo, clique em "Novo Produto".
-
-Preencha o formulário (tente colocar preço 0 para testar a validação).
-
-Salve e veja o produto na lista.
-
-Edite ou Exclua o produto criado.
+-----
