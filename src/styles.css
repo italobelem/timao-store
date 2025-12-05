@@ -1,1 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --bs-primary: #ffffff;       
+  --bs-primary-rgb: 255, 255, 255;
+  
+  --bs-secondary: #1a1a1a;     
+  --bs-secondary-rgb: 26, 26, 26;
+
+  --bs-success: #ffffff;
+  --bs-success-rgb: 255, 255, 255;
+
+  --bs-body-bg: #121212;       
+  --bs-body-color: #ffffff;    
+
+  --bs-border-color: #333333;
+  --bs-link-color: #ffffff;    
+  --bs-link-hover-color: #dcdcdc;
+
+  --bs-body-font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-body-font-family);
+  letter-spacing: 0.5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  font-weight: 800; 
+  text-transform: uppercase;
+}
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0; 
+}
+
+.btn-primary, .btn-success {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background-color: #cccccc !important;
+  border-color: #cccccc !important;
+  color: #000000 !important;
+}
+
+.btn-outline-light, .btn-secondary, .btn-outline-secondary, .btn-outline-success {
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-light:hover, .btn-secondary:hover, .btn-outline-secondary:hover, .btn-outline-success:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.table {
+  color: #ffffff !important;
+  border-color: #ffffff;
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: #222222;
+}
+
+.table > :not(caption) > * > * {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border-bottom-color: #333333;
+}
+
+.table-light {
+  background-color: #000000 !important; 
+  color: #ffffff !important;
+  border-bottom: 3px solid #ffffff !important; 
+}
+
+.table-light th {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.card {
+  background-color: #000000; 
+  border: 1px solid #333;
+  color: #ffffff;
+}
+
+.card-header {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-footer {
+  background-color: #1a1a1a !important;
+  border-top: 1px solid #333;
+}
+
+.form-control {
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  background-color: #111111;
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.form-control::placeholder {
+  color: #888888;
+}
+
+.navbar-dark.bg-dark {
+  background-color: #000000 !important;
+  border-bottom: 3px solid #ffffff;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: #ffffff !important;
+}
+
+.text-muted {
+  color: #aaaaaa !important;
+}
+
+.text-primary, .text-success {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-decoration-color: #ffffff !important; 
+}
+
+.badge.bg-danger {
+  background-color: #ffffff !important;
+  color: #000000 !important; 
+  border: 1px solid #000000;
+}
+
+.alert-info {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #fff;
+}
