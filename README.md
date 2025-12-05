@@ -50,25 +50,6 @@ Formulários: Reactive Forms
 
 Ícones: Bootstrap Icons
 
-📂 Estrutura do Projeto
-
-A organização segue as melhores práticas de separação de responsabilidades:
-
-src/app
-├── components      # Componentes visuais reutilizáveis
-│   ├── header      # Navegação e badge do carrinho
-│   └── product-table # Tabela isolada (dumb component)
-├── models          # Interfaces de tipagem (Product, CartItem)
-├── pages           # Componentes de página (Roteamento)
-│   ├── home        # Landing Page
-│   ├── product-list # Lógica da listagem
-│   ├── product-form # Lógica de cadastro/edição
-│   └── cart        # Lógica do carrinho
-└── services        # Regras de negócio e comunicação
-    ├── cart.service.ts    # Gerenciamento de estado (Client-side)
-    └── product.service.ts # Comunicação HTTP (Server-side)
-
-
 ▶️ Como Executar
 
 Pré-requisitos
