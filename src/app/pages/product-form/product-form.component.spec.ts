@@ -43,25 +43,25 @@ describe('ProductFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize form with default values', () => {
+  it('deve iniciar formulário com valores default', () => {
     expect(component.form).toBeDefined();
     expect(component.form.get('nome')?.value).toBe('');
     expect(component.form.get('codigoBarras')?.value).toBe('');
     expect(component.form.get('preco')?.value).toBe(0);
   });
 
-  it('should be invalid when nome is empty', () => {
+  it('deve ser inválido se o nome for vazio', () => {
     const nomeControl = component.form.get('nome');
     nomeControl?.setValue('');
     expect(component.form.valid).toBeFalsy();
     expect(nomeControl?.errors?.['required']).toBeTruthy();
   });
 
-  it('should be invalid when preco is less than or equal to 0', () => {
+  it('deve ser inválido se preco for menor ou igual a 0', () => {
     const precoControl = component.form.get('preco');
     
     precoControl?.setValue(0);
@@ -76,7 +76,7 @@ describe('ProductFormComponent', () => {
     expect(component.form.valid).toBeTruthy();
   });
 
-  it('should call createProduct when submitting valid form in create mode', () => {
+  it('deve chamar createProduct ao enviar um formulário válido ao registrar um produto', () => {
     component.form.patchValue({
       nome: 'Produto Novo',
       codigoBarras: '111222',
